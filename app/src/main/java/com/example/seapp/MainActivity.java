@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         for (int i = 0; i < parkText.length; i++) {
             parkText[i] = (TextView) findViewById(parkingId[i]);
-            // parkText[i].setBackgroundColor(Color.rgb(207, 207, 207));
             parkText[i].setOnClickListener(this);
         }
 
@@ -84,19 +83,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         setFocus(unfocus, (TextView) findViewById(view.getId()));
         TextView bookedSlot = (TextView) findViewById(view.getId());
-
         id = bookedSlot.getText().toString();
         rid = view.getId();
     }
 
     private void setFocus(TextView unfocus, TextView focus){
-        unfocus.setTextColor(Color.rgb(49, 50, 51));
-//        unfocus.setBackgroundColor(Color.rgb(207, 207, 207));
-
+        unfocus.setBackground(getDrawable(R.drawable.button));
         setColor();
-
-        focus.setTextColor(Color.rgb(255, 255, 255));
-        focus.setBackgroundColor(Color.rgb(3, 106, 150));
+        focus.setBackground(getDrawable(R.drawable.button_selected));
         this.unfocus = focus;
     }
 
@@ -110,11 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     String status = dataSnapshot.getValue(String.class);
                     if (status != null) {
                         if (status.equals("booked")) {
-                            parkText[index].setBackgroundColor(Color.RED);
+                            parkText[index].setBackground(getDrawable(R.drawable.button_taken));
                             parkText[index].setTextColor(Color.BLACK);
                             parkText[index].setEnabled(false);
                         } else if (status.equals("empty")) {
-                            parkText[index].setBackgroundColor(Color.GREEN);
                             parkText[index].setEnabled(true);
                         }
                     }
@@ -129,5 +122,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             slotRef.addValueEventListener(valueEventListener);
         }
     }
-
 }
