@@ -6,53 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="6dp"
-    tools:layout_editor_absoluteY="0dp">
+    tools:layout_editor_absoluteY="0dp"
+    android:background="@drawable/gradient_background">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Available Parking Slots"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap a slot to book!"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.06" />
 
     <TextView
         android:id="@+id/B1"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="48dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
+        android:paddingBottom="100dp"
         android:text="B1"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/A1"
-        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/B4"
-        android:layout_width="108dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/rectangle"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="B4"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/A4"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B3" />
 
     <TextView
         android:id="@+id/B2"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="B2"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/A2"
-        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintHorizontal_bias="0.773"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B1" />
 
@@ -60,9 +71,9 @@
         android:id="@+id/A1"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="A1"
@@ -75,8 +86,8 @@
         android:id="@+id/A3"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="A3"
@@ -85,15 +96,63 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/A2"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.018" />
+
+    <TextView
+        android:id="@+id/B3"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="B3"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/A3"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/B2"
+        app:layout_constraintVertical_bias="0.018" />
+
+    <TextView
+        android:id="@+id/A2"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="A2"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/A1" />
+
+    <TextView
+        android:id="@+id/B4"
+        android:layout_width="108dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="B4"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/A4"
+        app:layout_constraintHorizontal_bias="0.831"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/B3" />
 
     <TextView
         android:id="@+id/A5"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="A5"
@@ -107,7 +166,7 @@
         android:layout_width="108dp"
         android:layout_height="64dp"
         android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="A6"
@@ -116,15 +175,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/A5"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.065" />
 
     <TextView
         android:id="@+id/A4"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="72dp"
         android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="A4"
@@ -137,8 +196,8 @@
         android:id="@+id/B5"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="B5"
@@ -153,8 +212,8 @@
         android:id="@+id/B6"
         android:layout_width="108dp"
         android:layout_height="64dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/rectangle"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
         android:gravity="center"
         android:padding="5dp"
         android:text="B6"
@@ -166,38 +225,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/B5"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/B3"
-        android:layout_width="108dp"
-        android:layout_height="64dp"
-        android:background="@drawable/rectangle"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="B3"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/A3"
-        app:layout_constraintHorizontal_bias="0.831"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/B2"
-        app:layout_constraintVertical_bias="0.032" />
-
-    <TextView
-        android:id="@+id/A2"
-        android:layout_width="108dp"
-        android:layout_height="64dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="88dp"
-        android:background="@drawable/rectangle"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="A2"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/A1" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:textAllCaps="false"
