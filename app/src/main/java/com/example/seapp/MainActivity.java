@@ -89,8 +89,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setFocus(TextView unfocus, TextView focus){
         unfocus.setBackground(getDrawable(R.drawable.button));
+        unfocus.setElevation(0);
         setColor();
         focus.setBackground(getDrawable(R.drawable.button_selected));
+        focus.setElevation(50);
         this.unfocus = focus;
     }
 
@@ -103,12 +105,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     String status = dataSnapshot.getValue(String.class);
                     if (status != null) {
-                        if (status.equals("booked")) {
+                        if (status.equals("taken")) {
                             parkText[index].setBackground(getDrawable(R.drawable.button_taken));
                             parkText[index].setTextColor(Color.BLACK);
                             parkText[index].setEnabled(false);
                         } else if (status.equals("empty")) {
                             parkText[index].setEnabled(true);
+                        } else if (status.equals("booked")){
+                            parkText[index].setBackground(getDrawable(R.drawable.button_booked));
+                            parkText[index].setEnabled(false);
                         }
                     }
                 }
