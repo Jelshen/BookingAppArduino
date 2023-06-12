@@ -32,7 +32,6 @@ public class Booking extends androidx.fragment.app.DialogFragment {
         // plateNo = view.findViewById(R.id.bookerPlateNo);
         bookNo = view.findViewById(R.id.bookerSlotNo);
         Bundle data = getArguments();
-
         bookNo.setText(data.getString("ID"));
 
         return view;
