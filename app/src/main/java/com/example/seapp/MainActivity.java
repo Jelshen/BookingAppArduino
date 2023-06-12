@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
                 if(id.equals("")){
-                    Toast.makeText(MainActivity.this, "nu balek pilihna goblog", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please select a slot", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     DatabaseReference slotsRef = database.getReference("Parking_slots");
