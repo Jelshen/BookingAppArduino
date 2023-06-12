@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             parkText[index].setEnabled(false);
                         } else if (status.equals("empty")) {
                             parkText[index].setEnabled(true);
+                            parkText[index].setBackground(getDrawable(R.drawable.button));
                         } else if (status.equals("booked")){
                             parkText[index].setBackground(getDrawable(R.drawable.button_booked));
                             parkText[index].setEnabled(false);
