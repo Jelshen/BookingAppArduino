@@ -5,19 +5,25 @@
   #include <ESP8266WiFi.h>
 #endif
 #include <Firebase_ESP_Client.h>
+
+//Provide the token generation process info.
 #include "addons/TokenHelper.h"
+//Provide the RTDB payload printing info and other helper functions.
 #include "addons/RTDBHelper.h"
 
-#define WIFI_SSID "rexhania" // ganti sama wifi kalian
-#define WIFI_PASSWORD "powergirl" // ganti sama wifi kalian
+// Insert your network credentials
+#define WIFI_SSID "Rz"
+#define WIFI_PASSWORD "bindusian"
 
-// ganti sama firebase key
-#define API_KEY "AIzaSyAVS6124IVB-jcO1pfbFb3Cfyzx455wFdg"
+// Insert Firebase project API Key
+#define API_KEY "AIzaSyCFES2rk1PVQcaWCK9EyaKfqzRn3LelR-Q"
 
-// ganti sama firbase url gapake html
-#define DATABASE_URL "esp-firebase-demo-ethan-default-rtdb.asia-southeast1.firebasedatabase.app" 
+// Insert RTDB URLefine the RTDB URL */
+#define DATABASE_URL "seapp-6f4a5-default-rtdb.asia-southeast1.firebasedatabase.app/" 
 
+//Define Firebase Data object
 FirebaseData fbdo;
+
 FirebaseAuth auth;
 FirebaseConfig config;
 
@@ -25,6 +31,7 @@ unsigned long sendDataPrevMillis = 0;
 int count = 0;
 bool signupOK = false;
 int IR = D3;
+
 
 void setup(){
   Serial.begin(115200);
@@ -39,7 +46,11 @@ void setup(){
   Serial.print("Connected with IP: ");
   Serial.println(WiFi.localIP());
   Serial.println();
+
+/* Assign the api key (required) */
   config.api_key = API_KEY;
+
+  /* Assign the RTDB URL (required) */
   config.database_url = DATABASE_URL;
 
   /* Sign up */
@@ -62,6 +73,7 @@ void loop(){
     Serial.println("Booked");
     if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0)){
     sendDataPrevMillis = millis();
+    // Write an Float number on the database path test/float
     if (Firebase.RTDB.setString(&fbdo, "parking_slots/slot_1", "Booked")){
       Serial.println("PASSED");
       Serial.println("PATH: " + fbdo.dataPath());
@@ -76,6 +88,7 @@ void loop(){
      Serial.println("Empty");
     if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0)){
     sendDataPrevMillis = millis();
+    // Write an Float number on the database path test/float
     if (Firebase.RTDB.setString(&fbdo, "parking_slots/slot_1", "Empty")){
       Serial.println("PASSED");
       Serial.println("PATH: " + fbdo.dataPath());
@@ -87,5 +100,18 @@ void loop(){
       }
     }
   }
+  // if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0)){
+  //   sendDataPrevMillis = millis();
+  //   // Write an Float number on the database path test/float
+  //   if (Firebase.RTDB.setFloat(&fbdo, "parking_slots/slot_1", IRState)){
+  //     Serial.println("PASSED");
+  //     Serial.println("PATH: " + fbdo.dataPath());
+  //     Serial.println("TYPE: " + fbdo.dataType());
+  //   }
+  //   else {
+  //     Serial.println("FAILED");
+  //     Serial.println("REASON: " + fbdo.errorReason());
+  //   }
+  // }
    delay(1000);
 }
